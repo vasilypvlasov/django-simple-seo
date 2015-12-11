@@ -1,5 +1,5 @@
 from __future__ import print_function
-from django.apps.apps import get_model
+from django.apps import apps
 from django.utils.six import iteritems
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
@@ -45,7 +45,7 @@ def _get_class_from_name(model_name):
     :return:
     """
     _app_label, _model_name = registry[0].split('.')
-    return get_model(_app_label, _model_name)
+    return apps.get_model(_app_label, _model_name)
 
 
 def get_class_for_view(view):
