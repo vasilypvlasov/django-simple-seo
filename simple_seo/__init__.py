@@ -1,5 +1,5 @@
 from __future__ import print_function
-from django.db.models.loading import get_model
+from django.apps.apps.loading import get_model
 from django.utils.six import iteritems
 from django.core.exceptions import ImproperlyConfigured
 from django.core.urlresolvers import RegexURLResolver, RegexURLPattern
@@ -143,7 +143,3 @@ def load_view_names(urlconf=None):
             pass
     _view_names_registry.extend(views)
     return _view_names_registry
-
-
-
-
